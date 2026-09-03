@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Boy ❤️ | Kamalesh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#e85d8e;--rose:#b83d6b;--cream:#fff8f5;--ink:#3b2530}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Poppins,sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+section{padding:80px 20px;max-width:1050px;margin:auto}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:30px 20px;
+background:radial-gradient(circle at 20% 20%,#ffdce8,transparent 35%),linear-gradient(145deg,#fff7f3,#ffe5ee)}
+.badge{display:inline-block;padding:8px 15px;border:1px solid #ef9ab7;border-radius:99px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+h1{font-family:"DM Serif Display",serif;font-size:clamp(54px,11vw,110px);line-height:.92;margin:20px 0 10px;color:#8f3159}
+.hero p{font-size:clamp(16px,3vw,22px);margin:10px auto;max-width:700px}
+.names{font-size:14px;letter-spacing:3px;text-transform:uppercase;opacity:.75}
+.btn{display:inline-block;margin-top:25px;padding:13px 22px;border-radius:999px;background:#8f3159;color:white;text-decoration:none;border:0;cursor:pointer;font:inherit}
+.heart{font-size:45px;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{transform:scale(1.18)}}
+.floating{position:fixed;right:18px;bottom:18px;z-index:10;border-radius:999px;background:#8f3159;color:white;border:0;padding:12px 16px;cursor:pointer;box-shadow:0 8px 25px #8f315944}
+h2{font-family:"DM Serif Display",serif;font-size:48px;text-align:center;color:#8f3159;margin:0 0 14px}
+.subtitle{text-align:center;max-width:650px;margin:0 auto 35px;opacity:.78}
+.countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:30px 0}
+.time{background:white;border-radius:20px;padding:18px 16px;min-width:90px;box-shadow:0 8px 25px #8f315915}
+.time b{display:block;font-size:30px;color:#8f3159}.time span{font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.letter{background:white;border-radius:30px;padding:35px;box-shadow:0 12px 35px #8f315914;line-height:1.9;font-size:16px}
+.letter .sign{font-family:"DM Serif Display",serif;font-size:28px;color:#8f3159}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.gallery img{width:100%;height:420px;object-fit:cover;border-radius:24px;box-shadow:0 8px 25px #8f315915}
+.gallery img:nth-child(2),.gallery img:nth-child(3){height:320px}
+.memory{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;margin:35px 0}
+.memory img{width:100%;height:320px;object-fit:cover;border-radius:25px}
+.card{background:#fff;border-radius:25px;padding:28px;box-shadow:0 10px 30px #8f315914}
+.card h3{font-family:"DM Serif Display",serif;font-size:30px;color:#8f3159;margin-top:0}
+.surprise{text-align:center;background:linear-gradient(135deg,#fff0f5,#ffe0eb);border-radius:35px;padding:55px 25px}
+#secret{display:none;margin-top:25px;font-family:"DM Serif Display",serif;font-size:30px;color:#8f3159}
+footer{text-align:center;padding:45px 20px;font-size:13px;opacity:.7}
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}
+.float-heart{position:absolute;bottom:-30px;animation:rise 5s linear forwards;opacity:.8}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@media(max-width:700px){section{padding:60px 16px}.gallery{grid-template-columns:1fr}.gallery img,.gallery img:nth-child(2),.gallery img:nth-child(3){height:420px}.memory{grid-template-columns:1fr}.letter{padding:25px}}
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+
+<button class="floating" onclick="toggleMusic()">🎵 Music</button>
+<audio id="music" loop>
+  <!-- Put your own legally obtained "Annel Mela..." instrumental MP3 in this folder,
+       rename it to music.mp3, and this button will play it. -->
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<header class="hero">
+  <div>
+    <div class="heart">❤️</div>
+    <div class="badge">A little birthday surprise</div>
+    <h1>Happy Birthday<br>My Boy</h1>
+    <p>To the boy who started as my friend and became my favourite person.</p>
+    <div class="names">Kamalesh • 15 September 2006</div>
+    <a class="btn" href="#letter">Open my heart 💌</a>
+  </div>
+</header>
+
+<section>
+  <h2>Counting down to your day 🎂</h2>
+  <p class="subtitle">September 15 — the day my favourite boy was born.</p>
+  <div class="countdown">
+    <div class="time"><b id="days">0</b><span>Days</span></div>
+    <div class="time"><b id="hours">0</b><span>Hours</span></div>
+    <div class="time"><b id="mins">0</b><span>Minutes</span></div>
+    <div class="time"><b id="secs">0</b><span>Seconds</span></div>
+  </div>
+</section>
+
+<section id="letter">
+  <h2>My little love letter 💌</h2>
+  <div class="letter">
+    <p>Happy birthday da, Kamalesh ❤️</p>
+    <p>
+      Naaanga first friends-ah irundhu, konjam konjama relationship-ku vandhom.
+      Appo theriyala… one day nee enakku ivlo special-a aayiduva nu.
+    </p>
+    <p>
+      Nee azhaga irukradhu mattum illa, nalla pesuva, enna nalla purinjikra,
+      and most importantly, nee oru nalla paiyan. Adhanala dhaan unna na romba pudikkum. 🥹
+    </p>
+    <p>
+      Sanda vandhaalum, pesama poidradha vida thirumba solve panni pesanum-nu
+      enakku romba pidikkum. Unakku “yaarum illa” nu nee eppavume ninaikka koodadhu.
+      Naan irukken. Kandippa irukkanum. ❤️
+    </p>
+    <p>
+      En life-la nee irukradhu romba special. Innum neraya memories, sirippu,
+      sanda, samadhanam, adventures ellam namma serndhu create pannanum.
+    </p>
+    <p>
+      <b>Madly. Truly. Deeply.</b><br>
+      Love you da, venna paiyaa. 😭❤️
+    </p>
+    <p class="sign">Lovee you my boyyyy ❤️</p>
+    <p>— Vinodha</p>
+  </div>
+</section>
+
+<section>
+  <h2>Our little memories 📸</h2>
+  <p class="subtitle">Four pictures, but a thousand feelings.</p>
+  <div class="gallery">
+    <img src="photos/photo1.jpg" alt="Our beach memory">
+    <img src="photos/photo2.jpg" alt="Our beach memory">
+    <img src="photos/photo3.jpg" alt="Our beach memory">
+    <img src="photos/photo4.jpg" alt="A little memory">
+  </div>
+</section>
+
+<section>
+  <h2>From friends to us 🫶</h2>
+  <div class="memory">
+    <img src="photos/photo2.jpg" alt="Together by the sea">
+    <div class="card">
+      <h3>It started with friendship.</h3>
+      <p>Somewhere between our conversations, silly moments and understanding each other, you became more than just a friend.</p>
+    </div>
+  </div>
+  <div class="memory">
+    <div class="card">
+      <h3>And now… it's us.</h3>
+      <p>Even when we fight, I still want us to talk, understand and choose each other again. That's what makes this so special to me.</p>
+    </div>
+    <img src="photos/photo3.jpg" alt="Holding hands by the sea">
+  </div>
+</section>
+
+<section>
+  <div class="surprise">
+    <h2>One last surprise 🎁</h2>
+    <p>Press the button… but be ready for too much love. 🥹</p>
+    <button class="btn" onclick="showSecret()">Open it ❤️</button>
+    <div id="secret">No matter how many birthdays come… I want to celebrate you beside you. ❤️<br><br>Madly Truly Deeply Love You Da! 💋</div>
+  </div>
+</section>
+
+<footer>
+  Made with a whole lot of love by Vinodha ❤️<br>
+  For Kamalesh • 15.09.2006
+</footer>
+
+<script>
+const target = new Date("2026-09-15T00:00:00+05:30").getTime();
+function updateCountdown(){
+  let diff = Math.max(0, target - Date.now());
+  const d=Math.floor(diff/86400000);
+  const h=Math.floor(diff%86400000/3600000);
+  const m=Math.floor(diff%3600000/60000);
+  const s=Math.floor(diff%60000/1000);
+  document.getElementById("days").textContent=d;
+  document.getElementById("hours").textContent=h;
+  document.getElementById("mins").textContent=m;
+  document.getElementById("secs").textContent=s;
+}
+updateCountdown(); setInterval(updateCountdown,1000);
+
+function toggleMusic(){
+  const m=document.getElementById("music");
+  if(m.paused) m.play().catch(()=>alert("Add your own music.mp3 to the website folder first 🎵"));
+  else m.pause();
+}
+function showSecret(){
+  document.getElementById("secret").style.display="block";
+  for(let i=0;i<35;i++){
+    const h=document.createElement("div");
+    h.className="float-heart"; h.textContent=["❤️","💕","💗","💖"][Math.floor(Math.random()*4)];
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=(18+Math.random()*25)+"px";
+    h.style.animationDuration=(3+Math.random()*4)+"s";
+    document.getElementById("hearts").appendChild(h);
+    setTimeout(()=>h.remove(),7000);
+  }
+}
+</script>
+</body>
+</html>
